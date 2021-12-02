@@ -23,6 +23,7 @@ public class MySQLIntegrationTest {
     @Test
     void testMySQL() {
         long countBefore = bookRepository.count();
+        System.out.println("------------------------------- "+countBefore);
         assertThat(countBefore).isEqualTo(2);
     }
 
