@@ -13,7 +13,7 @@ import java.util.Objects;
 public class Book {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String title;
@@ -80,10 +80,10 @@ public class Book {
     }
 
     public Long getAuthorId() {
-        return this.authorId;
+        return authorId;
     }
 
-    public void setAuthorId(final Long authorId) {
+    public void setAuthorId(Long authorId) {
         this.authorId = authorId;
     }
 }
