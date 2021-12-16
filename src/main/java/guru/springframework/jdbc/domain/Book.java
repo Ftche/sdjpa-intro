@@ -1,14 +1,8 @@
-package guru.springframework.sdjpaintro.domain;
+package guru.springframework.jdbc.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Objects;
 
-/**
- * Created by jt on 6/12/21.
- */
 @Entity
 public class Book {
 
@@ -19,17 +13,18 @@ public class Book {
     private String title;
     private String isbn;
     private String publisher;
-    private Long authorId;
+
+    @Transient
+    private Author authorId;
 
     public Book() {
 
     }
 
-    public Book(String title, String isbn, String publisher, Long authorId) {
+    public Book(String title, String isbn, String publisher) {
         this.title = title;
         this.isbn = isbn;
         this.publisher = publisher;
-        this.authorId = authorId;
     }
 
     @Override
@@ -79,11 +74,11 @@ public class Book {
         this.publisher = publisher;
     }
 
-    public Long getAuthorId() {
+    public Author getAuthor() {
         return authorId;
     }
 
-    public void setAuthorId(Long authorId) {
+    public void setAuthor(Author authorId) {
         this.authorId = authorId;
     }
 }
