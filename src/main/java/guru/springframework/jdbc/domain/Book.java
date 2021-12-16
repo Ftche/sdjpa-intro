@@ -1,4 +1,4 @@
-package guru.springframework.sdjpaintro.domain;
+package guru.springframework.jdbc.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -6,9 +6,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.Objects;
 
-/**
- * Created by jt on 6/12/21.
- */
 @Entity
 public class Book {
 
@@ -25,11 +22,10 @@ public class Book {
 
     }
 
-    public Book(String title, String isbn, String publisher, Long authorId) {
+    public Book(String title, String isbn, String publisher) {
         this.title = title;
         this.isbn = isbn;
         this.publisher = publisher;
-        this.authorId = authorId;
     }
 
     @Override

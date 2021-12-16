@@ -1,21 +1,20 @@
-package guru.springframework.sdjpaintro.domain;
+package guru.springframework.jdbc.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
-/**
- * Created by jt on 8/14/21.
- */
 @Entity
 public class Author {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String firstName;
     private String lastName;
+
+    @Transient
+    private List<Book> books;
 
     public Long getId() {
         return id;
@@ -41,18 +40,11 @@ public class Author {
         this.lastName = lastName;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Author author = (Author) o;
-
-        return id != null ? id.equals(author.id) : author.id == null;
+    public List<Book> getBooks() {
+        return this.books;
     }
 
-    @Override
-    public int hashCode() {
-        return id != null ? id.hashCode() : 0;
+    public void setBooks(final List<Book> books) {
+        this.books = books;
     }
 }
