@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>guru.springframework</groupId>
-    <artifactId>sdjpa-jdbc-template</artifactId>
+    <artifactId>sdjpa-hibernate-dao</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>sdjpa-jdbc-template</name>
-    <description>sdjpa-jdbc-template</description>
+    <name>sdjpa-hibernate-dao</name>
+    <description>sdjpa-hibernate-dao</description>
     <properties>
         <java.version>11</java.version>
     </properties>

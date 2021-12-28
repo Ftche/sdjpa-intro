@@ -1,7 +1,9 @@
 package guru.springframework.jdbc.domain;
 
-import javax.persistence.*;
-import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 public class Author {
@@ -12,9 +14,6 @@ public class Author {
 
     private String firstName;
     private String lastName;
-
-    @Transient
-    private List<Book> books;
 
     public Long getId() {
         return id;
@@ -38,13 +37,5 @@ public class Author {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
-    }
-
-    public List<Book> getBooks() {
-        return this.books;
-    }
-
-    public void setBooks(final List<Book> books) {
-        this.books = books;
     }
 }
